@@ -1,0 +1,7 @@
+.ipynb_checkpoints
+__pycache__
+test-data
+output_skeleton_files
+.vscode
+data
+temp
