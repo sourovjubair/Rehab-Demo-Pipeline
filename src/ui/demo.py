@@ -181,7 +181,7 @@ class ExerciseDemoWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Exercise Demo"))
         self.exerciseTypeLabel.setText(_translate("MainWindow", "",))
-        self.nextButton.setText(_translate("MainWindow", "Next"))
+        self.nextButton.setText(_translate("MainWindow", "Nextt"))
 
 if __name__ == "__main__":
     import sys
