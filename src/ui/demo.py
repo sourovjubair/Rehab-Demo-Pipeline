@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtMultimediaWidgets, QtWidgets, QtMultimedia
+from PyQt5.QtWidgets import QHBoxLayout, QVBoxLayout
 from pipeline import exercise_map
 import pathlib
 #from .form import FormWindow
@@ -16,7 +17,7 @@ import pathlib
 class ExerciseDemoWindow(object):
     def __init__(self, recordWindowReference) -> None:
         self.recordWindowReference = recordWindowReference
-
+        
     def setupUi(self, MainWindow):
         self.MainWindow = MainWindow
         self.MainWindow.setObjectName("MainWindow")
@@ -70,7 +71,33 @@ class ExerciseDemoWindow(object):
         self.videoWidget.setSizePolicy(sizePolicy)
         self.videoWidget.stackUnder(self.exerciseTypeLabel)
         self.rootLayout.addWidget(self.videoWidget)
-
+        
+        #back button
+        self.backButton = QtWidgets.QPushButton(self.centralwidget)
+        self.backButton.setStyleSheet(
+            """
+            border-width: 5px;
+            border-color: #000000;
+            border-radius: 5px;
+            background: #DD5353;
+            color: #FEFEFE;
+            padding: 10px 20px;
+            font-size: 12px;
+            font-weight: bold;
+            """
+        )
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.backButton.setFont(font)
+        sizePolicy.setHeightForWidth(
+            self.backButton.sizePolicy().hasHeightForWidth()
+        )
+        self.backButton.setSizePolicy(sizePolicy)
+        self.backButton.setMinimumSize(QtCore.QSize(0, 0))
+        self.rootLayout.addWidget(self.backButton, 0, QtCore.Qt.AlignHCenter)
+        #end of back button
+        
+        #next button
         self.nextButton = QtWidgets.QPushButton(self.centralwidget)
         self.nextButton.setStyleSheet(
             """
@@ -112,6 +139,7 @@ class ExerciseDemoWindow(object):
         self.rootLayout.setStretch(0, 0)
         self.rootLayout.setStretch(1, 4)
         self.rootLayout.setStretch(2, 1)
+
 
         self.MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(self.MainWindow)
@@ -171,17 +199,23 @@ class ExerciseDemoWindow(object):
         # continuous loop
         if self.mediaPlayer.state() == QtMultimedia.QMediaPlayer.StoppedState:
             self.play_exercise_video_file()
-
+    
+    # handle next button
     def handle_next_button_clicked(self):
         self.recordWindowReference.set_state(self.state)
         self.recordWindowReference.MainWindow.show()
         self.MainWindow.close()
 
+    # handle back button
+    def handle_back_button_clicked(self):
+        self.form
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Exercise Demo"))
         self.exerciseTypeLabel.setText(_translate("MainWindow", "",))
-        self.nextButton.setText(_translate("MainWindow", "Nextt"))
+        self.nextButton.setText(_translate("MainWindow", "Next"))
+        self.backButton.setText(_translate("MainWindow", "Back"))
 
 if __name__ == "__main__":
     import sys
