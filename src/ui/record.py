@@ -133,7 +133,7 @@ class RecordWindow(QtWidgets.QWidget):
 
         self.MainWindow.setStyleSheet(
             """            
-            background-color: #5F8D4E;
+            background-color: #4d47b2;
             border-radius: 10px;
             color: #FFFFFF;
             font-family: Arial, Helvetica, sans-serif;

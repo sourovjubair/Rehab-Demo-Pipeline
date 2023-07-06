@@ -14,6 +14,9 @@ from pipeline import exercise_map
 import pathlib
 #from .form import FormWindow
 
+
+
+
 class ExerciseDemoWindow(object):
     def __init__(self, recordWindowReference) -> None:
         self.recordWindowReference = recordWindowReference
@@ -79,7 +82,7 @@ class ExerciseDemoWindow(object):
             border-width: 5px;
             border-color: #000000;
             border-radius: 5px;
-            background: #DD5353;
+            background: #0a0a23;
             color: #FEFEFE;
             padding: 10px 20px;
             font-size: 12px;
@@ -104,7 +107,7 @@ class ExerciseDemoWindow(object):
             border-width: 5px;
             border-color: #000000;
             border-radius: 5px;
-            background: #DD5353;
+            background: #0a0a23;
             color: #FEFEFE;
             padding: 10px 20px;
             font-size: 12px;
@@ -115,7 +118,7 @@ class ExerciseDemoWindow(object):
         #styling 
         self.MainWindow.setStyleSheet(
             """            
-            background-color: #5F8D4E;
+            background-color: #4d47b2;
             border-radius: 10px;
             color: #FFFFFF;
             font-family: Arial, Helvetica, sans-serif;
