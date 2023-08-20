@@ -82,7 +82,7 @@ class RecordWindow(QtWidgets.QWidget):
             border-width: 5px;
             border-color: #000000;
             border-radius: 5px;
-            background: #DD5353;
+            background: #0a0a23;
             color: #FEFEFE;
             padding: 10px 20px;
             font-size: 12px;
@@ -102,7 +102,7 @@ class RecordWindow(QtWidgets.QWidget):
             border-width: 5px;
             border-color: #000000;
             border-radius: 5px;
-            background: #DD5353;
+            background: #0a0a23;
             color: #FEFEFE;
             padding: 10px 20px;
             font-size: 12px;
@@ -123,7 +123,7 @@ class RecordWindow(QtWidgets.QWidget):
             border-width: 5px;
             border-color: #000000;
             border-radius: 5px;
-            background: #DD5353;
+            background: #0a0a23;
             color: #FEFEFE;
             padding: 10px 20px;
             font-size: 12px;
